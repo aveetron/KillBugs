@@ -15,9 +15,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from BugTrackingTool.views import MemberApiView
+from BugTrackingTool.views import MemberApiView, MemberDetailsApiView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', MemberApiView.as_view(), name='member'),
+    path('memberDetails/<pk>/', MemberDetailsApiView.as_view(),name='memberDetails'),
 ]
