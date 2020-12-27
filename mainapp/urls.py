@@ -19,6 +19,6 @@ from BugTrackingTool.views import MemberApiView, MemberDetailsApiView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', MemberApiView.as_view(), name='member'),
+    path('member', MemberApiView.as_view(), name='member'),
     path('memberDetails/<pk>/', MemberDetailsApiView.as_view(),name='memberDetails'),
 ]

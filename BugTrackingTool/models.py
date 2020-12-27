@@ -12,6 +12,7 @@ class Member(models.Model):
 class Project(models.Model):
     name = models.CharField(max_length=30)
     project_started = models.DateTimeField(auto_now_add=True)
+    
 
     def __str__(self):
         return self.name
@@ -27,6 +28,7 @@ class Bug(models.Model):
     description = models.TextField()
     assigned_member = models.ForeignKey(Member, on_delete=models.CASCADE)
     Status = models.ForeignKey(Status, on_delete=models.CASCADE)
+    project =  models.ForeignKey(Project , on_delete=models.CASCADE)
 
     def __str__(self):
         return self.name
