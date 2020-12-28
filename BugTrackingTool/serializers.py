@@ -20,3 +20,18 @@ class BugSerializer(serializers.ModelSerializer):
     class Meta:
         model = Bug
         fields = '__all__'
+
+
+class StatusSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = Status
+        fields = '__all__'
+
+
+
+class BugStatusChangeSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = Bug
+        fields = ['Status']
